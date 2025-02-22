@@ -1,0 +1,435 @@
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .navbar-bg {
+  height: 50px;
+}
+.logo {
+width: 30px;
+height: 35px !important;
+}
+.navbar-collapse {
+  background: rgb(0, 0, 0, 0.8) !important;
+  padding: 10px;
+}
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+.navbar-collapse {
+  background: rgb(0, 0, 0, 0.8) !important;
+  padding: 10px;
+}
+.masthead-heading {
+  width: 370px;
+  position: relative;
+  top: 40px;
+}
+.masthead-subheading {
+  width: 370px;
+  position: relative;
+  top: 40px;
+}
+/*  header.masthead {*/
+/*    padding-top: 8rem;*/
+/*    padding-bottom: 6rem;*/
+/*    color: #fff;*/
+/*    background-image: url("../images/hero-image.jpg");*/
+/*    background-repeat: no-repeat;*/
+/*    background-attachment: scroll;*/
+/*    background-position: center center;*/
+/*    background-size: cover;*/
+/*}*/
+header.masthead .masthead-heading h2 {
+  padding-top: 100px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+.leaf-item {
+width: 100%;
+height: 200px;
+}
+  .leaf-single-item img {
+  width: 120px;
+}
+.leaf-single-item-center img {
+width: 130px;
+}
+.fixed-headline {
+width: 400px;
+margin: 0 auto;
+margin-top: 0px;
+}
+.fixed-headline h2 {
+  text-align: center;
+  font-size: 22px;
+  width: 400px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 86px;
+  text-transform: uppercase;
+}
+.carousel-indicators [data-bs-target]{
+  width: 130px;
+  text-align: center;
+  color: #A37507;
+  font-family: 'Playfair Display';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  position: unset;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-right: unset;
+  margin-top: -100px;
+  margin-left: unset;
+  text-indent: unset;
+}
+/* our Project */
+  .our-project-section {
+  margin-bottom: 50px;
+  }
+  .mt-15 {
+    margin-top: 50px !important;
+  }
+.our-project-section .nav-link{
+  border: 1px solid #575757;
+  background: transparent;
+  display: flex;
+  width: auto;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 0px;
+}
+.project-details h2 {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.project-details {
+  margin: 20px;
+}
+  .project-details-2 {
+  margin: 20px !important;
+}
+.arrow-icon{
+  margin-left: -50px;
+}
+.arrow-icon-2{
+  margin-left: 0px !important;
+  padding-left: 10px !important;
+}
+.arrow-icon i {
+  font-size: 30px;
+  color: var(--bs-primary);
+  border: 1px solid var(--bs-border-color);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 40px;
+  rotate: 45deg;
+}
+.arrow-icon i:hover {
+  font-size: 30px;
+  color: var(--bs-light);
+  background: var(--bs-primary);
+  outline: 1px solid var(--bs-primary);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 40px;
+  rotate: 45deg;
+  outline-offset: 3px;
+}
+/* Land owner section */
+.overlay-custom-text {
+  margin-top: 50px;
+}
+.overlay-custom-text h2 {
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+  text-transform: capitalize;
+}
+ .landowner-section img{
+  margin-top: -160px;
+}
+/* Key Point section */
+  .key-point-section {
+      padding: 50px 0px;
+  }
+.key-point-section .title {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 35px;
+  width: 320px;
+}
+.gallery-section {
+      padding: 30px 0px;
+  }
+/* Contact section */
+.contact-section {
+      padding: 50px 0px;
+  }
+.contact-section h2 {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 75px;
+}
+  .address {
+  padding: 10px;
+  width: 350px;
+  border-left: 0px solid #00000055;
+}
+/* Approch section */
+  .our-approach-section {
+      margin: 50px 0px;
+  }
+.approach-auto-slide p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding: 10px;
+  width: 100%;
+}
+/* Copyright section */
+.footer-section {
+padding: 80px 0px 10px 0px;
+}
+.bottom-to-top i {
+  font-size: 30px;
+  color: var(--bs-primary);
+  border: 1px solid var(--bs-border-color);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 20px;
+}
+.bottom-to-top i:hover {
+  font-size: 30px;
+  color: var(--bs-light);
+  background: var(--bs-primary);
+  outline: 1px solid var(--bs-primary);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 20px;
+  outline-offset: 3px;
+}
+ /* why us */
+.why-us-content {
+  height: 400px;
+}
+.why-us-banner h1 {
+  font-size: 30px;
+  line-height: 86px;
+}
+.functional-content {
+ padding: 50px 1.5rem;
+}
+.functional-design-section .sub-title {
+width: 100%;
+padding: 10px 0px;
+}
+.functional-logo h1 {
+width: 100%;
+font-size: 40px;
+line-height: 50px;
+}
+.functional-logo-full h1 {
+width: 100%;
+font-size: 40px;
+line-height: 50px;
+}
+.about-page-contact-section h1 {
+width: 100%;
+font-size: 30px;
+line-height: 36px;
+padding: 100px 0 330px 0;
+}
+.vertical-line{
+padding-top: 130px;
+}
+.about-summary-section .sub-title p {
+margin-right: 0px;
+text-align: center !important;
+}
+.about-summary-section .sub-title h2 {
+font-size: 30px;
+text-align: center !important;
+}
+.board-of-directors-headline h1 {
+font-size: 30px;
+line-height: 38px;
+}
+.details-page h1{
+font-size: 40px !important;
+}
+.section-content-area h2 {
+font-size: 40px !important;
+}
+.recent-highlights-section .title {
+font-size: 40px !important;
+}
+.home-about-headline h2 {
+font-size: 40px !important;
+}
+.our-mission-content h2 {
+font-size: 40px !important;
+}
+.our-concerns-section .title {
+font-size: 40px !important;
+}
+.our-concerns-section .nav-link {
+padding: 10px 0px !important;
+}
+.width-75{
+width: 100% !important;
+}
+.width-25{
+width: 100% !important;
+}
+/*.home-slider .carousel-caption {*/
+/*bottom: 0px !important;*/
+/*text-align: start;*/
+/*}*/
+.home-about-content{
+  background: #ffffff99;
+}
+.carousel-indicators{
+  display: none;
+}
+
+
+}
+
+@media screen and (max-width: 370px) {
+.masthead img{
+  height: 230px;
+}
+.masthead .carousel-caption {
+  position: absolute;
+  right: 5%;
+  bottom: 1.25rem;
+  left: 2%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+.masthead-heading {
+  width: 100%;
+  position: relative;
+  top: 50px;
+}
+.masthead-subheading {
+  width: 100%;
+  position: relative;
+  top: 50px;
+}
+header.masthead .masthead-heading h2 {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.leaf-item {
+width: 100%;
+height: 120px;
+}
+.leaf-single-item img {
+  width: 90px;
+}
+.leaf-single-item-center img {
+width: 110px;
+}
+.fixed-headline {
+width: 100%;
+margin: 0 auto;
+margin-top: 0px;
+}
+.fixed-headline h2 {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+.approach-title h2 {
+color: var(--bs-secondary);
+font-size: 16px;
+font-weight: 400;
+line-height: 40.889px;
+text-transform: capitalize;
+}
+.carousel-indicators [data-bs-target]{
+  width: 110px;
+  text-align: center;
+  color: #A37507;
+  font-family: 'Playfair Display';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  position: unset;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-right: unset;
+  margin-top: -100px;
+  margin-left: unset;
+  text-indent: unset;
+}
+.arrow-icon i {
+  font-size: 30px;
+  color: var(--bs-primary);
+  border: 1px solid var(--bs-border-color);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 30px;
+  rotate: 45deg;
+}
+.overlay-custom-text h2 {
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+  text-transform: capitalize;
+}
+.gallery-overly-image img {
+  width: 120px;
+  height: 140px;
+}
+.address {
+  padding: 10px;
+  width: 350px;
+  border-left: 0px solid #00000055;
+}
+.footer-section {
+padding: 80px 0px 10px 0px;
+}
+}
