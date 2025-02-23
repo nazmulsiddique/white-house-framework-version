@@ -102,7 +102,7 @@ CSF::createSection( $prefix, array(
     ),
     array(
       'id'    => 'footer-up-arrow',
-      'type'  => 'media',
+      'type'  => 'icon',
       'title' => 'Footer Up Icon Image',
     ),
     array(
@@ -201,8 +201,13 @@ CSF::createSection( $prefix, array(
           'title' => 'Client Title',
         ),
         array(
+          'id'    => 'client-logo-image',
+          'type'  => 'media',
+          'title' => 'Client Logo Image'
+        ),
+        array(
           'id'    => 'client-logo-link',
-          'type'  => 'text',
+          'type'  => 'link',
           'title' => 'Client Logo Link'
         ),
       )
@@ -285,159 +290,53 @@ CSF::createSection( $prefix, array(
   'title'       => 'Home Page Our Concerns Content',
   'fields'      => array(
     array(
-      'id'    => 'our-concern-section-title',
-      'type'  => 'text',
-      'title' => 'Home Page Our Concerns Title',
-      'attributes' => array(
-      'style' => 'width: 100%;'
-      ),
-    ),
-    array(
-      'id'    => 'our-concern-section-content',
-      'type'  => 'tabbed',
-      'title' => 'Home Page Our Concerns Content',
-      'tabs'  => array(
+      'id'     => 'our-concern-section-content',
+      'type'   => 'group',
+      'title'  => 'Home Page Our Concerns Content',
+      'fields' => array(
         array(
-          'title'  => 'Tab One',
-          'fields' => array(
-            array(
-              'id'    => 'our-concerns-main-title-re',
-              'type'  => 'text',
-              'title' => 'Our Concerns Content Title',
-              'attributes' => array(
-              'style' => 'width: 100%;'
-              ),
-            ),
-            array(
-            'id'    => 'our-concerns-tab-image-re',
-            'type'  => 'media',
-            'title' => 'Our Concerns Content Image',
-            ),
-            array(
-              'id'    => 'our-concerns-tab-title-re',
-              'type'  => 'text',
-              'title' => 'Our Concerns Content Title',
-              'attributes' => array(
-              'style' => 'width: 100%;'
-              ),
-            ),
-            array(
-              'id'    => 'our-concerns-tab-description-re',
-              'type'  => 'textarea',
-              'title' => 'Our Concerns Content Description',
-            ),
-            array(
-              'id'    => 'our-concerns-tab-link-re',
-              'type'  => 'link',
-              'title' => 'Our Concerns Content Link',
-            ),
+          'id'    => 'our-concerns-main-title',
+          'type'  => 'text',
+          'title' => 'Our Concerns Link Title',
+          'attributes' => array(
+          'style' => 'width: 100%;'
           ),
         ),
-        // array(
-        //   'title'  => 'Tab Two',
-        //   'fields' => array(
-        //     array(
-        //       'id'    => 'our-concerns-tab-title-re',
-        //       'type'  => 'text',
-        //       'title' => 'Our Concerns Content Title',
-        //       'attributes' => array(
-        //       'style' => 'width: 100%;'
-        //       ),
-        //     ),
-        //     array(
-        //     'id'    => 'our-concerns-image-re',
-        //     'type'  => 'media',
-        //     'title' => 'Our Concerns Content Image',
-        //     ),
-        //     array(
-        //       'id'    => 'our-concerns-title-re',
-        //       'type'  => 'text',
-        //       'title' => 'Our Concerns Content Title',
-        //       'attributes' => array(
-        //       'style' => 'width: 100%;'
-        //       ),
-        //     ),
-        //     array(
-        //       'id'    => 'our-concerns-description-re',
-        //       'type'  => 'textarea',
-        //       'title' => 'Our Concerns Content Description',
-        //     ),
-        //     array(
-        //       'id'    => 'our-concerns-link-re',
-        //       'type'  => 'link',
-        //       'title' => 'Our Concerns Content Link',
-        //     ),
-        //   ),
-        // ),
-        // array(
-        //   'title'  => 'Tab Three',
-        //   'fields' => array(
-        //     array(
-        //     'id'    => 'our-concerns-image-re',
-        //     'type'  => 'media',
-        //     'title' => 'Our Concerns Content Image',
-        //     ),
-        //     array(
-        //       'id'    => 'our-concerns-title-re',
-        //       'type'  => 'text',
-        //       'title' => 'Our Concerns Content Title',
-        //       'attributes' => array(
-        //       'style' => 'width: 100%;'
-        //       ),
-        //     ),
-        //     array(
-        //       'id'    => 'our-concerns-description-re',
-        //       'type'  => 'textarea',
-        //       'title' => 'Our Concerns Content Description',
-        //     ),
-        //     array(
-        //       'id'    => 'our-concerns-link-re',
-        //       'type'  => 'link',
-        //       'title' => 'Our Concerns Content Link',
-        //     ),
-        //   ),
-        // ),
-        // array(
-        //   'title'  => 'Tab Four',
-        //   'fields' => array(
-        //     array(
-        //     'id'    => 'our-concerns-image-re',
-        //     'type'  => 'media',
-        //     'title' => 'Our Concerns Content Image',
-        //     ),
-        //     array(
-        //       'id'    => 'our-concerns-title-re',
-        //       'type'  => 'text',
-        //       'title' => 'Our Concerns Content Title',
-        //       'attributes' => array(
-        //       'style' => 'width: 100%;'
-        //       ),
-        //     ),
-        //     array(
-        //       'id'    => 'our-concerns-description-re',
-        //       'type'  => 'textarea',
-        //       'title' => 'Our Concerns Content Description',
-        //     ),
-        //     array(
-        //       'id'    => 'our-concerns-link-re',
-        //       'type'  => 'link',
-        //       'title' => 'Our Concerns Content Link',
-        //     ),
-        //   ),
-        // ),
-
-
-      ),
+        array(
+        'id'    => 'our-concerns-tab-image',
+        'type'  => 'media',
+        'title' => 'Our Concerns Content Image',
+        ),
+        array(
+          'id'    => 'our-concerns-tab-title',
+          'type'  => 'text',
+          'title' => 'Our Concerns Content Title',
+          'attributes' => array(
+          'style' => 'width: 100%;'
+          ),
+        ),
+        array(
+          'id'    => 'our-concerns-tab-description',
+          'type'  => 'textarea',
+          'title' => 'Our Concerns Content Description',
+        ),
+        array(
+          'id'    => 'our-concerns-tab-link',
+          'type'  => 'link',
+          'title' => 'Our Concerns Content Link',
+        ),
+      )
     ),
-
   )
+
 ) );
+
 CSF::createSection( $prefix, array(
   'parent'      => 'home_page_about_section',
   'title'       => 'Home Page Recent Highlights Content',
   'fields'      => array(
       array(
-        'id'    => 'our-mission-title',
+        'id'    => 'our-recent-highlights-title',
         'type'  => 'text',
         'title' => 'Home Page Recent Highlights Title',
         'attributes' => array(
@@ -445,27 +344,27 @@ CSF::createSection( $prefix, array(
         ),
       ),
       array(
-        'id'     => 'our-mission-content',
+        'id'     => 'our-recent-highlights-content',
         'type'   => 'repeater',
         'title'  => 'Home Page Recent Highlights Content',
         'fields' => array(
           array(
-            'id'    => 'our-concerns-image',
-            'type'  => 'background',
+            'id'    => 'our-recent-highlights-image',
+            'type'  => 'media',
             'title' => 'Recent Highlights Content Image',
           ),
           array(
-            'id'    => 'our-concerns-title',
+            'id'    => 'our-recent-highlights-title',
             'type'  => 'text',
             'title' => 'Recent Highlights Content Title',
           ),
           array(
-            'id'    => 'our-concerns-description',
+            'id'    => 'our-recent-highlights-description',
             'type'  => 'textarea',
             'title' => 'Recent Highlights Content Description',
           ),
           array(
-            'id'    => 'our-concerns-link',
+            'id'    => 'our-recent-highlights-link',
             'type'  => 'link',
             'title' => 'Recent Highlights Content Link',
           ),
@@ -474,7 +373,5 @@ CSF::createSection( $prefix, array(
 
   )
 ) );
-
-
 
 }

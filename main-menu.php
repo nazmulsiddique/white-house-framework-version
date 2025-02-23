@@ -1,6 +1,7 @@
+<?php $myOptions = get_option( 'git_theme_options' ); ?>
 <div class="container">
     <a class="navbar-brand" href="<?php echo home_url(); ?>">
-        <img class="logo" src="<?php echo get_theme_mod('logo_image') ?>" alt="logo">
+        <img class="logo" src="<?php echo $myOptions['logo-image']['url']; ?>" alt="logo">
     </a>
     <button class="navbar-toggler text-white border border-0" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"

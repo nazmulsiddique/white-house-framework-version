@@ -10,3 +10,4 @@
         <?php wp_head(); ?>
     </head>
 <body>
+<?php $myOptions = get_option( 'git_theme_options' ); ?>
