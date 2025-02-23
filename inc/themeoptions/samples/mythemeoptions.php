@@ -290,6 +290,14 @@ CSF::createSection( $prefix, array(
   'title'       => 'Home Page Our Concerns Content',
   'fields'      => array(
     array(
+      'id'    => 'our-concerns-section-title',
+      'type'  => 'text',
+      'title' => 'Our Concerns Title',
+      'attributes' => array(
+      'style' => 'width: 100%;'
+      ),
+    ),
+    array(
       'id'     => 'our-concern-section-content',
       'type'   => 'group',
       'title'  => 'Home Page Our Concerns Content',

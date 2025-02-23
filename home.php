@@ -12,155 +12,94 @@ get_header(); ?>
   <?php include("home-slider.php"); ?>
 
 
-  <div class="home-about-section"
-    style="background-image: url('<?php echo get_template_directory_uri() ?>/images/home-about-bg.webp'); background-repeat: no-repeat; background-position:right bottom;">
+  <div class="home-about-section">
     <div class="home-about-content container cpy-10">
       <div class="row">
         <div class="col-md-6">
           <div class="home-about-headline mb-5 px-3 px-md-0">
-            <h2 data-aos="fade-up" data-aos-duration="1000">About Us</h2>
+            <h2 data-aos="fade-up" data-aos-duration="1000"><?php echo $myOptions['about-page-title']; ?></h2>
             <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-            <p>
-              TST White House Ltd. is a prominent real estate and trading company based in Dhaka, Bangladesh,
-              established in 2023. The company takes pride in its role as direct importers of high-quality Dubai black
-              stone (GABBRO), enabling it to supply up to 100,000 metric tons of stone per month. </p>
-            <p>
-              Additionally, TST White House is adept at providing Bitumen imported from Dubai, Indian Pakur Stone, and
-              Local Sand. </p>
-            <p>
-              Positioned at the forefront of contemporary real estate development, the company aims to redefine luxury
-              living and commercial spaces. By blending cutting-edge technology with visionary design, TST White House
-              Limited is ushering in a new era of urban lifestyle.
-            </p>
+            <?php echo $myOptions['about-page-description']; ?>
           </div>
           </div>
         </div>
         <div class="col-6">
         </div>
       </div>
-
-
-
-
     </div>
 
   </div>
 
-  <div class="our-mission-section"
-    style="background-image: url('<?php echo get_template_directory_uri() ?>/images/home-mission-bg.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+  <div class="our-mission-section">
     <div class="container cpy-100">
       <div class="row px-3 px-md-0">
         <div class="col-12">
           <div class="our-mission-content mb-5">
-            <h2 data-aos="fade-up" data-aos-duration="1000">Our Mission</h2>
+            <h2 data-aos="fade-up" data-aos-duration="1000"><?php echo $myOptions['our-mission-section-title']; ?></h2>
           </div>
         </div>
+        <?php 
+        $our_mission_data = $myOptions['our-mission-column-content'];
+        foreach ($our_mission_data as $index => $data):
+        ?>
         <div class="col-md-4">
           <div class="our-mission-content mb-5 pe-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-            <h3>For Our Clients</h3>
-            <p>To offer a global touch, maintaining Bangladeshi culture in living and work places, with utmost
-              uncompromising service to our clients and value for money. </p>
+            <h3><?php echo $data['our-mission-column-title']; ?></h3>
+            <p><?php echo $data['our-mission-column-description']; ?></p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="our-mission-content mb-5 pe-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <h3>For Our Employees</h3>
-            <p>To give employees a feeling of satisfaction by maximizing their potentials and providing means for their
-              personal well-being and career development.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="our-mission-content mb-5 pe-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-            <h3>For Our Investors</h3>
-            <p>To ensure a smooth upward-reasonable trend of return on investment.</p>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
-
+<?php $concerns = $myOptions['our-concern-section-content']; ?>
   <div class="our-concerns-section bg-black cpy-100" id="ourConcerns">
     <div class="container">
-      <h2 class="title">Our Concerns</h2>
+      <h2 class="title"><?php echo $myOptions['our-concerns-section-title']; ?></h2>
       <div class="d-flex align-items-start flex-wrap">
         <div class="nav flex-column nav-pills width-25 mb-5 mb-md-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <button class="nav-link active" id="v-pills-real-state-tab" data-bs-toggle="pill"
-            data-bs-target="#v-pills-real-state" type="button" role="tab" aria-controls="v-pills-real-state"
-            aria-selected="true">Real Estate</button>
-          <button class="nav-link" id="v-pills-building-material-tab" data-bs-toggle="pill"
-            data-bs-target="#v-pills-building-material" type="button" role="tab"
-            aria-controls="v-pills-building-material" aria-selected="false">Building Materials</button>
-          <button class="nav-link" id="v-pills-agro-tab" data-bs-toggle="pill" data-bs-target="#v-pills-agro"
-            type="button" role="tab" aria-controls="v-pills-agro" aria-selected="false">Essential Agro
-            Commodities</button>
-          <button class="nav-link" id="v-pills-mega-structure-tab" data-bs-toggle="pill"
-            data-bs-target="#v-pills-mega-structure" type="button" role="tab" aria-controls="v-pills-mega-structure"
-            aria-selected="false">Mega Structures</button>
+        <?php
+          $i = 0;
+          foreach ($concerns as $key => $concern) :
+              $active = ($i == 0) ? 'active' : '';
+              ?>
+              <button class="nav-link <?php echo $active; ?>" id="v-pills-<?php echo $key; ?>-tab" data-bs-toggle="pill"
+                  data-bs-target="#v-pills-<?php echo $key; ?>" type="button" role="tab" aria-controls="v-pills-<?php echo $key; ?>"
+                  aria-selected="<?php echo ($i == 0) ? 'true' : 'false'; ?>">
+                  <?php echo $concern['our-concerns-main-title']; ?>
+              </button>
+        <?php
+          $i++;
+          endforeach;
+        ?>
         </div>
         <div class="tab-content width-75" id="v-pills-tabContent">
-          <div class="tab-pane fade show active" id="v-pills-real-state" role="tabpanel"
-            aria-labelledby="v-pills-real-state-tab" tabindex="0">
-            <div class="row">
-              <div class="col-md-6 text-center">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/images/our-concern-1.webp"
-                  alt="..." />
-              </div>
-              <div class="col-md-6 our-concerns-content">
-                <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">A New way of building</h2>
-                <p class="mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Our real estate projects redefine living and working spaces through innovation,
-                  sustainability, and design excellence.</p>
-                <p class="mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">We craft transformative mega-structures and innovative properties that meet modern demands while
-                  shaping a better urban future.</p>
-                <a href="<?php echo home_url(); ?>/real-state" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="v-pills-building-material" role="tabpanel"
-            aria-labelledby="v-pills-building-material-tab" tabindex="0">
-            <div class="row">
-              <div class="col-md-6 text-center">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/images/our-concern-2.webp"
-                  alt="..." />
-              </div>
-              <div class="col-md-6 our-concerns-content">
-                <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">A New way of building</h2>
-                <p class="mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">We focus on importing high-quality materials such as gabbro stone from Dubai and bitumen. </p>
-                <a href="<?php echo home_url(); ?>/construction-buildings-materials" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="v-pills-agro" role="tabpanel" aria-labelledby="v-pills-agro-tab" tabindex="0">
-            <div class="row">
-              <div class="col-md-6 text-center">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/images/our-concern-3.webp"
-                  alt="..." />
-              </div>
-              <div class="col-md-6 our-concerns-content">
-                <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">A New way of building</h2>
-                <p class="mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">We are dedicated to ensuring a reliable supply of essential commodities like sugar and edible oil,
-                  serving diverse industrial and commercial needs with integrity and excellence. </p>
-                <a href="<?php echo home_url(); ?>/agro" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="v-pills-mega-structure" role="tabpanel"
-            aria-labelledby="v-pills-mega-structure-tab" tabindex="0">
-            <div class="row">
-              <div class="col-md-6 text-center">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/images/our-concern-4.webp"
-                  alt="..." />
-              </div>
-              <div class="col-md-6 our-concerns-content">
-                <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">A New way of building</h2>
-                <p class="mb-3" class="mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Our mega-structure projects exemplify engineering brilliance and architectural
-                  innovation. Including bridge piling and road works, these projects are designed to redefine skylines
-                  and infrastructure. </p>
-                <p class="mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">They reflect our commitment to excellence, sustainability, and modernity, delivering iconic landmarks
-                  that stand the test of time.</p>
-                <a href="<?php echo home_url(); ?>/upcoming-projects" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Learn More</a>
-              </div>
-            </div>
-          </div>
+            <?php
+                $i = 0;
+                foreach ($concerns as $key => $concern) :
+                    $active = ($i == 0) ? 'show active' : ''; ?>
+                    <div class="tab-pane fade <?php echo $active; ?>" id="v-pills-<?php echo $key; ?>"
+                        role="tabpanel" aria-labelledby="v-pills-<?php echo $key; ?>-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <img class="img-fluid" src="<?php echo $concern['our-concerns-tab-image']['url']; ?>" alt="Concern Image" />
+                            </div>
+                            <div class="col-md-6 our-concerns-content">
+                                <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                                    <?php echo $concern['our-concerns-tab-title']; ?>
+                                </h2>
+                                <p class="mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                                    <?php echo $concern['our-concerns-tab-description']; ?>
+                                </p>
+                                <a href="<?php echo $concern['our-concerns-tab-link']; ?>" 
+                                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            <?php $i++;
+                endforeach;  ?>
         </div>
       </div>
     </div>
