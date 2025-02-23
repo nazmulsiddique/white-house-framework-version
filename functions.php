@@ -2,7 +2,7 @@
 function git_theme_name_scripts() {
     // Enqueue Styles
     wp_enqueue_style('style-name-one', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1.0.0', 'all');
-    wp_enqueue_style('style-name-six', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+    wp_enqueue_style('style-name-six', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
     wp_enqueue_style('style-name-two', get_template_directory_uri() . '/css/aos.css', array(), '1.0.0', 'all');
     wp_enqueue_style('style-name-four', get_template_directory_uri() . '/css/owl.carousel.min.css');
     wp_enqueue_style('style-name-five', get_template_directory_uri() . '/css/owl.theme.default.min.css');

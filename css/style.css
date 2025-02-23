@@ -715,10 +715,13 @@ text-transform: uppercase;
   outline-offset: 3px;
   cursor: pointer;
 }
-.social-share-icon img{
-  width: 20px;
-  height: 20px;
-  margin-right: 20px;
+.social-share-icon i{
+  font-size: 24px;
+  margin-right: 10px;
+  color: #848484;
+}
+.social-share-icon i:hover{
+  color: var(--bs-primary);
 }
 .copyright p{
   color: #848484;
