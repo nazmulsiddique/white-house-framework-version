@@ -109,51 +109,29 @@ get_header(); ?>
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2 class="title mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Recent Highlights</h2>
+          <h2 class="title mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><?php echo $myOptions['our-recent-highlights-title']; ?></h2>
         </div>
         
         <div class="col-md-8">
           <div class="owl-carousel owl-theme  second-carousel">
+          <?php foreach ($myOptions['our-recent-highlights-content'] as $highlight) : ?>
               <div class="recent-highlights-content item">
-                <div class="card text-white">
-                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/images/recent-heighlit-1.webp" alt="Image 1" />
-                  <div class="card-img-overlay">
-                    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">A MILESTONE TO ACHIEVE</h2>
-                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Supply up to 100,000 metric tons of stone/ month. </p>
-                    <a href="<?php echo home_url(); ?>/construction-buildings-materials" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Learn More</a>
+                  <div class="card bg-dark text-white">
+                      <img class="img-fluid" src="<?php echo $highlight['our-recent-highlights-image']['url']; ?>" alt="<?php echo $highlight['our-recent-highlights-title']; ?>" />
+                      <div class="card-img-overlay">
+                          <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                              <?php echo $highlight['our-recent-highlights-title']; ?>
+                          </h2>
+                          <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                              <?php echo $highlight['our-recent-highlights-description']; ?>
+                          </p>
+                          <a href="<?php echo $highlight['our-recent-highlights-link']; ?>" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                              Learn More
+                          </a>
+                      </div>
                   </div>
-                </div>
               </div>
-              <div class="recent-highlights-content item">
-                <div class="card text-white">
-                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/images/recent-heighlit-2.webp" alt="Image 1" />
-                  <div class="card-img-overlay">
-                    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">A DREAM IN THE MAKING</h2>
-                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">TST Prime is A symbol of luxury and comfort. </p>
-                    <a href="<?php echo home_url(); ?>/real-state#ourProject" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Learn More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="recent-highlights-content item">
-                <div class="card text-white">
-                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/images/recent-heighlit-1.webp" alt="Image 1" />
-                  <div class="card-img-overlay">
-                    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">A MILESTONE TO ACHIEVE</h2>
-                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Supply up to 100,000 metric tons of stone/ month. </p>
-                    <a href="<?php echo home_url(); ?>/construction-buildings-materials" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Learn More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="recent-highlights-content item">
-                <div class="card text-white">
-                    <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/images/recent-heighlit-2.webp" alt="Image 1" />
-                  <div class="card-img-overlay">
-                    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">A DREAM IN THE MAKING</h2>
-                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">TST Prime is A symbol of luxury and comfort. </p>
-                    <a href="<?php echo home_url(); ?>/real-state#ourProject" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Learn More</a>
-                  </div>
-                </div>
-              </div>
+          <?php endforeach; ?>
           </div>
         </div>
         
@@ -165,21 +143,14 @@ get_header(); ?>
   <div class="leaf-section bg-light">
     <div class="container">
       <div class="row justify-content-center">
-        <h2 class="mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Our Partners</h2>
-        <div class="leaf-item d-flex justify-content-between align-items-center flex-wrap">
-          <div class="leaf-single-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
-            <img src="<?php echo get_theme_mod('leaf_logo_image_1') ?>" alt="">
+        <h2 class="mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><?php echo $myOptions['our-client-section-title'];?></h2>
+          <div class="leaf-item d-flex justify-content-between align-items-center flex-wrap">
+            <?php foreach ($myOptions['client-area'] as $clientLogo) : ?>
+              <div class="leaf-single-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000">
+                <img src="<?php echo $clientLogo['client-logo-image']['url']; ?>" alt="">
+              </div>
+            <?php endforeach; ?>
           </div>
-          <div class="leaf-single-item-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="700">
-            <img src="<?php echo get_theme_mod('leaf_logo_image_2') ?>" alt="">
-          </div>
-          <div class="leaf-single-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
-            <img src="<?php echo get_theme_mod('leaf_logo_image_3') ?>" alt="">
-          </div>
-          <div class="leaf-single-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1100">
-            <img src="<?php echo get_template_directory_uri() ?>/images/leaf-logo.png" alt="">
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -187,24 +158,24 @@ get_header(); ?>
   <div class="contact-section" id="contact">
     <div class="container">
       <div class="contact-text">
-        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><?php echo get_theme_mod('contact_section_small_text') ?></p>
-        <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><?php echo get_theme_mod('contact_section_heading') ?></h2>
+        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><?php echo $myOptions['contact-us-section-subtitle'];?></p>
+        <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><?php echo $myOptions['contact-us-section-title'];?></h2>
       </div>
       <div class="row mt-md-5">
         <div class="col-md-6">
           <div class="contact-form mt-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-            <?php echo do_shortcode(get_theme_mod('contact_section_contactform')); ?>
+          <?php echo do_shortcode($myOptions['contact-us-contact-form']); ?>
           </div>
         </div>
         <div class="col-md-6 d-flex align-items-center justify-content-center" id="exploreLocation">
           <div class="contact-address">
             <div class="address" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-              <h2><?php echo get_theme_mod('contact_section_visit_us') ?></h2>
+              <h2><?php echo $myOptions['contact-us-contact-form-address-title'];?></h2>
               <p><i class="fa fa-map-marker icon-address" aria-hidden="true"></i>
-                <?php echo get_theme_mod('contact_section_address') ?></p>
-              <p><i class="fa fa-phone" aria-hidden="true"></i> <?php echo get_theme_mod('contact_section_mobile') ?>
+              <?php echo $myOptions['address'];?></p>
+              <p><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $myOptions['mobile-number'];?>
               </p>
-              <p><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo get_theme_mod('contact_section_email') ?>
+              <p><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $myOptions['email-address'];?>
               </p>
             </div>
           </div>

@@ -190,11 +190,18 @@ CSF::createSection( $prefix, array(
   'icon'  => 'fa fa-users',
   'fields'      => array(
     array(
+      'id'    => 'our-client-section-title',
+      'type'  => 'text',
+      'title' => 'Home Page Recent Highlights Title',
+      'attributes' => array(
+      'style' => 'width: 100%;'
+      ),
+    ),
+    array(
       'id'     => 'client-area',
       'type'   => 'repeater',
       'title'  => 'Client Image & Link fields',
       'fields' => array(
-        
         array(
           'id'    => 'client-title',
           'type'  => 'text',
