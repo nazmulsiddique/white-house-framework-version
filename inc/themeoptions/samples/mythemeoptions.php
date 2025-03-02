@@ -389,4 +389,188 @@ CSF::createSection( $prefix, array(
   )
 ) );
 
+
+// Real Estate page  Section Content
+CSF::createSection( $prefix, array(
+  'id'     => 'real_estate_page_section',
+  'title'  => 'Real Estate Content',  
+  'icon'   => 'fa fa-building',
+) );
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'real_estate_page_section',
+  'title'       => 'Real Estate Slider Section',
+  'fields'      => array(
+    array(
+      'id'     => 'real_estate_slider-area',
+      'type'   => 'repeater',
+      'title'  => 'Real Estate Slider fields',
+      'fields' => array(
+        array(
+          'id'    => 'real_estate_slider-bg',
+          'type'  => 'media',
+          'title' => 'Slider Image',
+        ),
+        array(
+          'id'    => 'real_estate_slider-color',
+          'type'  => 'color',
+          'title' => 'Color',
+        ),
+        array(
+          'id'    => 'real_estate_slider-title',
+          'type'  => 'text',
+          'title' => 'Title Title',
+        ),
+        array(
+          'id'    => 'real_estate_slider-description',
+          'type'  => 'text',
+          'title' => 'Title Description',
+        ),
+      )
+    ),
+  )
+) );
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'real_estate_page_section',
+  'title'       => 'Real Estate About Content',
+  'fields'      => array(
+      array(
+        'id'    => 'real_estate_about-page-bg',
+        'type'  => 'media',
+        'title' => 'Real Estate About Section Background Image',
+      ),
+      array(
+        'id'    => 'real_estate_about-page-title',
+        'type'  => 'text',
+        'title' => 'Real Estate About Section Title',
+        'attributes' => array(
+        'style' => 'width: 100%;'
+        ),
+      ),
+  )
+) );
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'real_estate_page_section',
+  'title'       => 'Real Estate Approach Section',
+  'fields'      => array(
+    array(
+      'id'    => 'approach_section_title',
+      'type'  => 'text',
+      'title' => 'Approach Section Title',
+      'attributes' => array(
+      'style' => 'width: 100%;'
+      ),
+    ),
+    array(
+      'id'     => 'approach_section_area',
+      'type'   => 'repeater',
+      'title'  => 'Real Estate Approach fields',
+      'fields' => array(
+        array(
+          'id'    => 'approach_single_section_title',
+          'type'  => 'text',
+          'title' => 'Single Approach Section Title',
+          'attributes' => array(
+          'style' => 'width: 100%;'
+          ),
+        ),
+        array(
+          'id'    => 'approach_single_section_image_1',
+          'type'  => 'media',
+          'title' => 'Single Approach Section Image One',
+        ),
+        array(
+          'id'    => 'approach_single_section_image_2',
+          'type'  => 'media',
+          'title' => 'Single Approach Section Image Two',
+        ),
+        array(
+          'id'    => 'approach_single_section_description',
+          'type'  => 'text',
+          'title' => 'Single Approach Section Description',
+        ),
+      )
+    ),
+  )
+) );
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'real_estate_page_section',
+  'title'       => 'Real Estate Project Section',
+  'fields'      => array(
+    array(
+      'id'    => 'project_section_title',
+      'type'  => 'text',
+      'title' => 'Project Section Title',
+      'attributes' => array(
+      'style' => 'width: 100%;'
+      ),
+    ),
+    array(
+      'id'     => 'project_section_area',
+      'type'   => 'group',
+      'title'  => 'Real Estate Project fields',
+      'fields' => array(
+        array(
+          'id'    => 'project_single_section_group_title',
+          'type'  => 'text',
+          'title' => 'Single Project Section Group Title',
+          'attributes' => array(
+          'style' => 'width: 100%;'
+          ),
+        ),
+        array(
+          'id'    => 'project_single_section_image_1',
+          'type'  => 'media',
+          'title' => 'Single Project Section Image One',
+        ),
+        array(
+          'id'    => 'project_single_section_image_2',
+          'type'  => 'media',
+          'title' => 'Single Project Section Image Two',
+        ),
+        array(
+          'id'    => 'project_single_section_image_3',
+          'type'  => 'media',
+          'title' => 'Single Project Section Image Three',
+        ),
+        array(
+          'id'    => 'project_single_section_title',
+          'type'  => 'text',
+          'title' => 'Single Project Section Title',
+          'attributes' => array(
+          'style' => 'width: 100%;'
+          ),
+        ),
+        array(
+          'id'    => 'project_single_section_category',
+          'type'  => 'text',
+          'title' => 'Single Project Section Category',
+          'attributes' => array(
+          'style' => 'width: 100%;'
+          ),
+        ),
+        array(
+          'id'    => 'project_single_section_status',
+          'type'  => 'text',
+          'title' => 'Single Project Section Status',
+          'attributes' => array(
+          'style' => 'width: 100%;'
+          ),
+        ),
+        array(
+          'id'    => 'project_single_section_address',
+          'type'  => 'text',
+          'title' => 'Single Project Section Address',
+          'attributes' => array(
+          'style' => 'width: 100%;'
+          ),
+        ),
+      )
+    ),
+  )
+) );
+
 }
