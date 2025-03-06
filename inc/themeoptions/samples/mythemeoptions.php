@@ -402,27 +402,22 @@ CSF::createSection( $prefix, array(
   'title'       => 'Real Estate Slider Section',
   'fields'      => array(
     array(
-      'id'     => 'real_estate_slider-area',
+      'id'     => 'real_estate_slider_area',
       'type'   => 'repeater',
       'title'  => 'Real Estate Slider fields',
       'fields' => array(
         array(
-          'id'    => 'real_estate_slider-bg',
+          'id'    => 'real_estate_slider_bg',
           'type'  => 'media',
           'title' => 'Slider Image',
         ),
         array(
-          'id'    => 'real_estate_slider-color',
-          'type'  => 'color',
-          'title' => 'Color',
-        ),
-        array(
-          'id'    => 'real_estate_slider-title',
+          'id'    => 'real_estate_slider_title',
           'type'  => 'text',
           'title' => 'Title Title',
         ),
         array(
-          'id'    => 'real_estate_slider-description',
+          'id'    => 'real_estate_slider_description',
           'type'  => 'text',
           'title' => 'Title Description',
         ),
@@ -436,12 +431,12 @@ CSF::createSection( $prefix, array(
   'title'       => 'Real Estate About Content',
   'fields'      => array(
       array(
-        'id'    => 'real_estate_about-page-bg',
+        'id'    => 'real_estate_about_page_bg',
         'type'  => 'media',
         'title' => 'Real Estate About Section Background Image',
       ),
       array(
-        'id'    => 'real_estate_about-page-title',
+        'id'    => 'real_estate_about_page_title',
         'type'  => 'text',
         'title' => 'Real Estate About Section Title',
         'attributes' => array(
@@ -567,6 +562,83 @@ CSF::createSection( $prefix, array(
           'attributes' => array(
           'style' => 'width: 100%;'
           ),
+        ),
+      )
+    ),
+  )
+) );
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'real_estate_page_section',
+  'title'       => 'Real Estate Landowner Content',
+  'fields'      => array(
+      array(
+        'id'    => 'real_estate_landowner-bg',
+        'type'  => 'background',
+        'title' => 'Real Estate Landowner Section Background Image',
+        'output' => '.landowner-section-bg',
+      ),
+      array(
+        'id'    => 'real_estate_landowner-title',
+        'type'  => 'text',
+        'title' => 'Real Estate Landowner Section Title',
+        'attributes' => array(
+        'style' => 'width: 100%;'
+        ),
+      ),
+      array(
+        'id'    => 'real_estate_landowner-subtitle',
+        'type'  => 'text',
+        'title' => 'Real Estate Landowner Section Sub Title',
+        'attributes' => array(
+        'style' => 'width: 100%;'
+        ),
+      ),
+  )
+) );
+
+CSF::createSection( $prefix, array(
+  'parent'      => 'real_estate_page_section',
+  'title'       => 'Real Estate Key Point',
+  'fields'      => array(
+    array(
+      'id'    => 'key_point_section_title',
+      'type'  => 'text',
+      'title' => 'Key Point Section Title',
+      'attributes' => array(
+      'style' => 'width: 100%;'
+      ),
+    ),
+    array(
+      'id'    => 'key_point_section_subtitle',
+      'type'  => 'text',
+      'title' => 'Key Point Section Sub Title',
+      'attributes' => array(
+      'style' => 'width: 100%;'
+      ),
+    ),
+    array(
+      'id'     => 'key_point_single_section_area',
+      'type'   => 'repeater',
+      'title'  => 'Real Estate Key Point fields',
+      'fields' => array(
+        array(
+          'id'    => 'key_point_single_section_title',
+          'type'  => 'text',
+          'title' => 'Single Key Point Title',
+          'attributes' => array(
+          'style' => 'width: 100%;'
+          ),
+        ),
+        array(
+          'id'    => 'key_point_single_section_icon',
+          'type'  => 'media',
+          'title' => 'Single Key Point Icon',
+        ),
+        array(
+          'id'    => 'key_point_single_section_description',
+          'type'  => 'text',
+          'title' => 'Single Key Point Description',
         ),
       )
     ),

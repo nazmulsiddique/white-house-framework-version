@@ -2,7 +2,10 @@
 /*
 Template Name: Real Estate 
 */
-get_header(); ?>
+get_header();
+$myOptions = get_option( 'git_theme_options' );
+$slider_data = $myOptions['real_estate_slider_area'];
+?>
        
           <div class="main-wrapper">
               <nav class="navbar navbar-expand-lg navbar-bg text-light fixed-top" id="mainNav">
@@ -11,28 +14,19 @@ get_header(); ?>
             <header class="masthead" id="">
             <div id="demo" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="<?php echo get_theme_mod('slider_image_first') ?>" alt="Slider One" class="d-block w-100">
+                <?php foreach ($slider_data as $index => $slide): ?>
+                  <div class="carousel-item  <?php echo $index === 0 ? 'active' : ''; ?>" data-bs-interval="10000">
+                    <img src="<?php echo esc_url($slide['real_estate_slider_bg']['url'] ?? ''); ?>" alt="Slider  <?php echo $index + 1; ?>" class="d-block w-100">
                       <div class="carousel-caption">
                           <div class="masthead-heading text-uppercase"> 
-                            <h2><?php echo get_theme_mod('slider_section_title_first') ?></h2>
+                            <h2><?php echo esc_html($slide['real_estate_slider_title'] ?? ''); ?></h2>
                           </div>
                           <div class="masthead-subheading">
-                            <p><?php echo get_theme_mod('slider_section_description_first') ?> </p>
+                            <p><?php echo esc_html($slide['real_estate_slider_description'] ?? ''); ?> </p>
                           </div>
                       </div>
                   </div>
-                  <div class="carousel-item" data-bs-interval="10000">
-                    <img src="<?php echo get_theme_mod('slider_image_second') ?>" alt="Slider Two" class="d-block w-100">
-                    <div class="carousel-caption">
-                          <div class="masthead-heading text-uppercase"> 
-                            <h2><?php echo get_theme_mod('slider_section_title_second') ?></h2>
-                          </div>
-                          <div class="masthead-subheading">
-                            <p><?php echo get_theme_mod('slider_section_description_second') ?> </p>
-                          </div>
-                      </div>
-                  </div>
+                  <?php endforeach; ?>
                 </div>
             </div>
         </header>
@@ -41,40 +35,34 @@ get_header(); ?>
               <div class="container">
                 <div class="row justify-content-center">
                   <div class="leaf-item d-flex justify-content-between align-items-center">
-                    <div class="leaf-single-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                      <img src="<?php echo get_theme_mod('leaf_logo_image_1') ?>" alt="">
+                  <?php foreach ($myOptions['client-area'] as $clientLogo) : ?>
+                    <div class="leaf-single-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000">
+                      <img src="<?php echo $clientLogo['client-logo-image']['url']; ?>" alt="">
                     </div>
-                    <div class="leaf-single-item-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
-                      <img src="<?php echo get_theme_mod('leaf_logo_image_2') ?>" alt="">
-                    </div>
-                    <div class="leaf-single-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                      <img src="<?php echo get_theme_mod('leaf_logo_image_3') ?>" alt="">
-                    </div>
+                  <?php endforeach; ?>
                   </div>
                 </div>
               </div>
             </div>
+
             <div class="about-section">
               <div class="about-content">
-
                 <div class="fixed-headline sticky-top-title mb-md-5">
-                 <h2 class="text-center"><?php echo get_theme_mod('about_section_title') ?></h2>
+                  <h2 class="text-center"><?php echo $myOptions['real_estate_about_page_title'];?></h2>
                 </div>
-              
-                <img src="<?php echo get_theme_mod('about_banner_image') ?>" alt="" class="img-fluid">
-                
+                <img src="<?php echo $myOptions['real_estate_about_page_bg']['url'];?>" alt="" class="img-fluid">
               </div>
-              
             </div>
+
+          <?php $approach_data = $myOptions['approach_section_area']; ?>
             <div class="our-approach-section" id="ourApproach">
               <div class="container">
                 <div class="approach-title">
-                  <h2>Our unique approach 
+                  <h2><?php echo $myOptions['approach_section_title'];?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="47" height="46" viewBox="0 0 47 46" fill="none">
                       <circle cx="23.2773" cy="23" r="22.0417" stroke="#A37507" stroke-width="1.91667"/>
                       <path d="M22.5997 32.3998C22.974 32.7741 23.5807 32.7741 23.955 32.3998L30.0538 26.301C30.428 25.9268 30.428 25.32 30.0538 24.9457C29.6795 24.5715 29.0727 24.5715 28.6985 24.9457L23.2773 30.3669L17.8562 24.9457C17.4819 24.5715 16.8752 24.5715 16.5009 24.9457C16.1267 25.32 16.1267 25.9268 16.5009 26.301L22.5997 32.3998ZM22.319 12.7222V31.7222H24.2357V12.7222H22.319Z" fill="#A37507"/>
                       </svg>
-
                   </h2>
                 </div>
               </div>
@@ -82,24 +70,24 @@ get_header(); ?>
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                   <div class="d-flex justify-content-center inicator-section">
                     <div class="carousel-indicators custom-indicators mt-5">
-                      <span data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"> <?php echo get_theme_mod('approach_tab_1_title') ?></span>
-                      <span data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"><?php echo get_theme_mod('approach_tab_2_title') ?></span>
-                      <span data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"><?php echo get_theme_mod('approach_tab_3_title') ?></span>
+                    <?php foreach ($approach_data as $index => $slide): ?>
+                      <span data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="<?php echo $index; ?>" class="<?php echo $index === 0 ? 'active' : ''; ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>" aria-label="Slide <?php echo $index + 1; ?>"> <?php echo esc_html($slide['approach_single_section_title'] ?? ''); ?></span>
+                      <?php endforeach; ?>
                     </div>
                   </div>
                   <div class="carousel-inner mt-md-5">
                     <div class="carousel-item active">
                       <div class="row">
                         <div class="col-md-6">
-                          <img src="<?php echo get_theme_mod('approach_tab_1_image_one') ?>" alt="" class="img-fluid">
+                          <img src="<?php echo esc_html($slide['approach_single_section_image_1']['url']); ?>" alt="" class="img-fluid">
                         </div>
                         <div class="col-md-6">
                           <div class="row">
                             <div class="col-12">
-                              <img src="<?php echo get_theme_mod('approach_tab_1_image_two') ?>" alt="" class="img-fluid">
+                              <img src="<?php echo esc_html($slide['approach_single_section_image_2']['url']); ?>" alt="" class="img-fluid">
                             </div>
                             <div class="col-12">
-                              <p><?php echo get_theme_mod('approach_tab_1_description') ?></p>
+                              <p><?php echo esc_html($slide['approach_single_section_description']); ?></p>
                             </div>
                           </div>
                         </div>
