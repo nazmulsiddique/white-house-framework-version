@@ -573,13 +573,13 @@ CSF::createSection( $prefix, array(
   'title'       => 'Real Estate Landowner Content',
   'fields'      => array(
       array(
-        'id'    => 'real_estate_landowner-bg',
+        'id'    => 'real_estate_landowner_bg',
         'type'  => 'background',
         'title' => 'Real Estate Landowner Section Background Image',
         'output' => '.landowner-section-bg',
       ),
       array(
-        'id'    => 'real_estate_landowner-title',
+        'id'    => 'real_estate_landowner_title',
         'type'  => 'text',
         'title' => 'Real Estate Landowner Section Title',
         'attributes' => array(
@@ -587,12 +587,17 @@ CSF::createSection( $prefix, array(
         ),
       ),
       array(
-        'id'    => 'real_estate_landowner-subtitle',
+        'id'    => 'real_estate_landowner_subtitle',
         'type'  => 'text',
         'title' => 'Real Estate Landowner Section Sub Title',
         'attributes' => array(
         'style' => 'width: 100%;'
         ),
+      ),
+      array(
+        'id'    => 'real_estate_landowner_image',
+        'type'  => 'media',
+        'title' => 'Real Estate Landowner Section Scroll Image'
       ),
   )
 ) );

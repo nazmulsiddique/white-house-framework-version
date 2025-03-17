@@ -310,128 +310,64 @@ $slider_data = $myOptions['real_estate_slider_area'];
               </div>
             </div>
             <div class="landowner-section">
-              <div class="landowner-section-bg" style="background-image: url('<?php echo get_theme_mod('landowner_section_scroll_bg_image') ?>'); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+              <div class="landowner-section-bg">
                 <div class="card text-white">
-                  
                   <div class="card-img-overlay container sticky-top-landowner">
                     <div class="row">
                       <div class="col-12 col-md-4"></div>
                       <div class="col-12 col-md-6 overlay-custom-text">
-                        <p><?php echo get_theme_mod('landowner_section_small_title') ?></p>
-                        <h2><?php echo get_theme_mod('landowner_section_title') ?></h2>
-                        <p class="mt-5"><a href="<?php echo get_theme_mod('landowner_button_text_link') ?>"><?php echo get_theme_mod('landowner_button_text') ?> &nbsp; <!-- <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-                          <circle cx="18" cy="18" r="17.25" stroke="white" stroke-width="1.5"/>
-                          <path d="M25.9624 17.9214C26.2553 17.6286 26.2553 17.1537 25.9624 16.8608L21.1894 12.0878C20.8965 11.7949 20.4217 11.7949 20.1288 12.0878C19.8359 12.3807 19.8359 12.8556 20.1288 13.1485L24.3714 17.3911L20.1288 21.6338C19.8359 21.9266 19.8359 22.4015 20.1288 22.6944C20.4217 22.9873 20.8965 22.9873 21.1894 22.6944L25.9624 17.9214ZM10.5625 18.1411H25.4321V16.6411H10.5625V18.1411Z" fill="white"/>
-                          </svg>--></a> </p> 
+                        <p><?php echo esc_html($myOptions['real_estate_landowner_subtitle'] ?? ''); ?></p>
+                        <h2><?php echo esc_html($myOptions['real_estate_landowner_title'] ?? ''); ?></h2>
                       </div>
                     </div>
                   </div>
-                  <img src="<?php echo get_theme_mod('landowner_section_scroll_image') ?>" class="img-fluid" alt="">
+                  <img src="<?php echo esc_html($myOptions['real_estate_landowner_image']['url'] ?? ''); ?>" class="img-fluid" alt="">
                 </div>
               </div>
             </div>
+            <?php 
+              $key_point_data = $myOptions['key_point_single_section_area']; 
+              $total_items = count($key_point_data);
+            ?>
             <div class="key-point-section" id="keyPoint">
               <div class="container">
                 <div class="row">
                   <div class="col-md-6">
-                    <p class="subtitle"><?php echo get_theme_mod('key_point_section_small_text') ?></p>
-                    <h2 class="title"><?php echo get_theme_mod('key_point_section_headline') ?></h2>
+                    <p class="subtitle"><?php echo esc_html($myOptions['key_point_section_subtitle'] ?? ''); ?></p>
+                    <h2 class="title"><?php echo esc_html($myOptions['key_point_section_title'] ?? ''); ?></h2>
                   </div>
+                  <?php $count = 0; ?>
+                  <?php foreach ($key_point_data as $key_point) : ?>
+                    <?php if ($count == 2) : ?>
+                      <!-- Add an Empty Column in 2nd Row First Position -->
+                      </div><div class="row mt-3">
+                      <div class="col-md-3"></div> <!-- Empty Column -->
+                    <?php endif; ?>
                   <div class="col-md-3 box mb-3">
                     <div class="single-key-point">
-                      <img src="<?php echo get_theme_mod('single_key_point_icon_1') ?>" alt="">
+                      <img src="<?php echo esc_url($key_point['key_point_single_section_icon']['url'] ?? ''); ?>" alt="">
                       <div class="single-key-title">
-                        <h2><?php echo get_theme_mod('single_key_point_title_1') ?></h2>
+                        <h2><?php echo esc_html($key_point['key_point_single_section_title'] ?? ''); ?></h2>
                       </div>
                     </div>
                     <div class="overlay">
                       <div class="text">
                       <div class="single-key-title">
-                        <h2><?php echo get_theme_mod('single_key_point_title_1') ?></h2>
+                        <h2><?php echo esc_html($key_point['key_point_single_section_title'] ?? ''); ?></h2>
                       </div>
                       <div class="single-key-description">
-                        <p class="mt-3"><?php echo get_theme_mod('single_key_point_desc_1') ?></p>
+                        <p class="mt-3"><?php echo esc_html($key_point['key_point_single_section_description'] ?? ''); ?></p>
                       </div>
                     </div>
                     </div>
-                  </div>
-                  <div class="col-md-3 box mb-3">
-                    <div class="single-key-point">
-                      <img src="<?php echo get_theme_mod('single_key_point_icon_2') ?>" alt="">
-                      <div class="single-key-title">
-                        <h2><?php echo get_theme_mod('single_key_point_title_2') ?></h2>
-                      </div>
-                    </div>
-                    <div class="overlay">
-                      <div class="text">
-                      <div class="single-key-title">
-                        <h2><?php echo get_theme_mod('single_key_point_title_2') ?></h2>
-                      </div>
-                      <div class="single-key-description">
-                        <p class="mt-3"><?php echo get_theme_mod('single_key_point_desc_2') ?></p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>                 
+                  </div>  
+                  <?php $count++; ?> 
+                  <?php endforeach; ?>             
                 </div>
-                <div class="row mt-3">
-                  <div class="col-md-3 offset-md-3 box mb-3">
-                      <div class="single-key-point">
-                        <img src="<?php echo get_theme_mod('single_key_point_icon_3') ?>" alt="">
-                        <div class="single-key-title">
-                          <h2><?php echo get_theme_mod('single_key_point_title_3') ?></h2>
-                        </div>
-                      </div>
-                      <div class="overlay">
-                        <div class="text">
-                          <div class="single-key-title">
-                            <h2><?php echo get_theme_mod('single_key_point_title_3') ?></h2>
-                          </div>
-                          <div class="single-key-description">
-                            <p class="mt-3"><?php echo get_theme_mod('single_key_point_desc_3') ?></p>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col-md-3 box mb-3">
-                    <div class="single-key-point">
-                      <img src="<?php echo get_theme_mod('single_key_point_icon_4') ?>" alt="">
-                      <div class="single-key-title">
-                        <h2><?php echo get_theme_mod('single_key_point_title_4') ?></h2>
-                      </div>
-                    </div>
-                    <div class="overlay">
-                      <div class="text">
-                      <div class="single-key-title">
-                        <h2><?php echo get_theme_mod('single_key_point_title_4') ?></h2>
-                      </div>
-                      <div class="single-key-description">
-                        <p class="mt-3"><?php echo get_theme_mod('single_key_point_desc_4') ?></p>
-                      </div>
-                    </div>
-                    </div>
-                  </div> 
-                  <div class="col-md-3 box mb-3">
-                    <div class="single-key-point">
-                      <img src="<?php echo get_theme_mod('single_key_point_icon_5') ?>" alt="">
-                      <div class="single-key-title">
-                        <h2><?php echo get_theme_mod('single_key_point_title_5') ?></h2>
-                      </div>
-                    </div>
-                    <div class="overlay">
-                      <div class="text">
-                      <div class="single-key-title">
-                        <h2><?php echo get_theme_mod('single_key_point_title_5') ?></h2>
-                      </div>
-                      <div class="single-key-description">
-                        <p class="mt-3"><?php echo get_theme_mod('single_key_point_desc_5') ?></p>
-                      </div>
-                    </div>
-                    </div>
-                  </div> 
-                </div>
+                
               </div>
             </div>
+
             <div class="gallery-section">
                 <div class="container-fluid">
                     <div class="position-relative">
@@ -474,27 +410,31 @@ $slider_data = $myOptions['real_estate_slider_area'];
                 </div>
             </div>
             </div>
+
             <div class="contact-section" id="contact">
               <div class="container">
                 <div class="contact-text">
-                  <p><?php echo get_theme_mod('contact_section_small_text') ?></p>
-                  <h2><?php echo get_theme_mod('contact_section_heading') ?></h2>
+                  <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><?php echo $myOptions['contact-us-section-subtitle'];?></p>
+                  <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><?php echo $myOptions['contact-us-section-title'];?></h2>
                 </div>
                 <div class="row mt-md-5">
                   <div class="col-md-6">
-                    <div class="contact-form mt-md-5">
-                    <?php echo do_shortcode(get_theme_mod('contact_section_contactform')); ?>
+                    <div class="contact-form mt-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                    <?php echo do_shortcode($myOptions['contact-us-contact-form']); ?>
                     </div>
                   </div>
                   <div class="col-md-6 d-flex align-items-center justify-content-center" id="exploreLocation">
-                          <div class="contact-address">
-                            <div class="address">
-                              <h2><?php echo get_theme_mod('contact_section_visit_us') ?></h2>
-                              <p><i class="fa fa-map-marker icon-address" aria-hidden="true"></i> <?php echo get_theme_mod('contact_section_address') ?></p>
-                              <p><i class="fa fa-phone" aria-hidden="true"></i> <?php echo get_theme_mod('contact_section_mobile') ?></p>
-                              <p><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo get_theme_mod('contact_section_email') ?></p>
-                            </div>
-                          </div>
+                    <div class="contact-address">
+                      <div class="address" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                        <h2><?php echo $myOptions['contact-us-contact-form-address-title'];?></h2>
+                        <p><i class="fa fa-map-marker icon-address" aria-hidden="true"></i>
+                        <?php echo $myOptions['address'];?></p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $myOptions['mobile-number'];?>
+                        </p>
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $myOptions['email-address'];?>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
